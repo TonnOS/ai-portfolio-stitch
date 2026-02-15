@@ -1,14 +1,13 @@
 <template>
-  <section id="projects" class="min-h-screen p-6 relative">
+  <section id="projects" class="min-h-screen p-6 py-24 relative">
     <div class="max-w-4xl mx-auto">
-      <h2 class="text-3xl font-bold mb-8 text-center glitch-text">Projects</h2>
+      <h2 class="text-3xl font-bold mb-2 text-center glitch-text">Projects</h2>
+      <p class="text-slate-400 text-center mb-12">Selected works in AI, ML, and systems engineering</p>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <ProjectCard 
           v-for="project in projects" 
           :key="project.title"
-          :title="project.title"
-          :description="project.description"
-          :tags="project.tags"
+          v-bind="project"
         />
       </div>
     </div>
@@ -16,13 +15,6 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
 import ProjectCard from './ProjectCard.vue'
-
-const projects = ref([
-  { title: 'Neural Interface', description: 'Real-time brain-computer interface with 99.9% accuracy', tags: ['Rust', 'CUDA'] },
-  { title: 'Autonomous Systems', description: 'Self-learning robotics platform for industrial automation', tags: ['Python', 'ROS'] },
-  { title: 'Quantum ML', description: 'Quantum machine learning framework for optimization', tags: ['Qiskit', 'TensorFlow'] },
-  { title: 'Edge AI', description: 'Lightweight neural networks for embedded devices', tags: ['C++', 'TinyML'] },
-])
+import { projects } from '../data/projects.js'
 </script>
