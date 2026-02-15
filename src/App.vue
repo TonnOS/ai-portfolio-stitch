@@ -12,12 +12,9 @@
 </template>
 
 <script setup>
-import { defineAsyncComponent } from 'vue'
-
-// Lazy load components for better performance
-const Navbar = defineAsyncComponent(() => import('./components/Navbar.vue'))
-const HeroSection = defineAsyncComponent(() => import('./components/HeroSection.vue'))
-const ProjectsSection = defineAsyncComponent(() => import('./components/ProjectsSection.vue'))
-const ContactSection = defineAsyncComponent(() => import('./components/ContactSection.vue'))
-const FooterSection = defineAsyncComponent(() => import('./components/FooterSection.vue'))
+import Navbar from './components/Navbar.vue'
+import HeroSection from './components/HeroSection.vue'
+import ProjectsSection from './components/ProjectsSection.vue'
+import ContactSection from './components/ContactSection.vue'
+import FooterSection from './components/FooterSection.vue'
 </script>
